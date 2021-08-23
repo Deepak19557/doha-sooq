@@ -1,0 +1,7 @@
+<br><br>
+<%= form_with model: @user do |form| %>
+  <%= form.text_field :name %> 
+  <%= form.select :city_name, @cities.map{|p| [p.city_name]} %>
+  <%= form.submit %>
+<% end %>
+

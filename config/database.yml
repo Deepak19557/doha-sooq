@@ -6,3 +6,12 @@ development:
   username: postgres
   password: 12345678
   host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: blog_development_prod
+  pool: 5
+  username: postgres
+  password: 12345678
+  host: localhost

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     def new
         @user = User.new
         @user.exercises.build
+        @cities = City.all
     end
     def create
         @user = User.create(user_params)

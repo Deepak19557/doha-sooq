@@ -1,7 +1,17 @@
-<br><br>
-<%= form_with model: @user do |form| %>
-  <%= form.text_field :name %> 
-  <%= form.select :city_name, @cities.map{|p| [p.city_name]} %>
-  <%= form.submit %>
+<%= form_with model: @user, local: true do |f| %>
+	<div class="container">
+	   <div class="field form-group">
+		  <%= f.label :name %><br>
+		  <%= f.text_field :name ,class:"form-control",placeholder:"Name" %><br>
+	   </div>
+	   <div class="field form-group">
+		  <%= f.label :city_name %><br>
+		  <%= f.text_field :city_name ,class:"form-control",placeholder:"City Name" %><br>
+	   </div>
+	   <h3>Exercises:</h3>
+	   <%= f.fields_for :exercises do |exercises_form| %>
+		<%= render "exercise", f: exercises_form %>
+	   <% end %>
+	   <%= f.submit class: "btn btn-primary"  %>
+	</div>
 <% end %>
-

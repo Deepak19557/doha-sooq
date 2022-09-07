@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_23_095928) do
+ActiveRecord::Schema.define(version: 2022_09_05_063712) do
 
   create_table "books", force: :cascade do |t|
     t.string "book_name"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 2021_08_23_095928) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "exercises", force: :cascade do |t|
+    t.string "exercise_name"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_exercises_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -32,4 +40,5 @@ ActiveRecord::Schema.define(version: 2021_08_23_095928) do
     t.string "city_name"
   end
 
+  add_foreign_key "exercises", "users"
 end

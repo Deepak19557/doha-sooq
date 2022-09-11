@@ -1,1 +1,33 @@
 <h2 style="text-align: center;"><%= link_to "new one ", new_user_path %></h2>
+<table class="table table-striped table-bordered table-hover friend_list">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>City Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <tr class="size">
+                <td><%= user.name %></td>
+                <td><%= user.city_name %></td>
+            </tr>
+        <% end%>
+    </tbody>
+</table>
+<br><br><br>
+
+<table class="table table-striped table-bordered table-hover friend_list">
+    <thead class="thead-dark">
+        <tr>
+            <th>Exercise Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @exercises.each do |exer| %>
+            <tr class="size">
+                <td><%= exer.exercise_name %></td>
+            </tr>
+        <% end%>
+    </tbody>
+</table>

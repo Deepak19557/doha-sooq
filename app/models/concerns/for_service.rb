@@ -9,7 +9,7 @@ module ForService
   def get_10 # Instance Method
     puts "This is instance method #{self.class}"
     self.limit(10)
-  end 
+  end
 
   def get_1
   	puts 'this is get'

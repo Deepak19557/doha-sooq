@@ -1,13 +1,21 @@
 class UsersController < ApplicationController
+    include Bhopal
+
+    def page_one
+      @users = read_user
+    end
+
     def index
         @users = User.all
         @exercises = Exercise.all
     end
+
     def new
         @user = User.new
         @user.exercises.build
         @cities = City.all
     end
+
     def create
         @user = User.create(user_params)
         redirect_to root_path
